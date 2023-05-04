@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "keycode": "^2.2.1"
+  }
+}

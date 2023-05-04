@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: rgb(87, 30, 12);background-image: url("bg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+    min-height:100%;
+    min-width:100%;
+    overflow:hidden;
+
+}
+.logo{
+    background-image:url('download.png');
+    position:absolute;
+    background-repeat:no-repeat;
+    height:200px;
+    width:250px;
+    
+}
+
+.user{
+    background-image:url("dino.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:250px;
+    height:200px;
+    position:absolute;
+    bottom:0px;
+    left:12px;
+    z-index: 10;
+
+}
+.obstacle{
+    background-image:url("dragon.png");
+    background-size:cover;
+    width:220px;
+    height:150px;
+    position:absolute;
+    bottom:0px;
+    left:80%;
+    z-index: 10;
+}
+.dragon{
+    background-image:url("flying.png");
+    background-size:cover;
+    width:400px;
+    height:350px;
+    position:absolute;
+    bottom:30%;
+    left:80%;
+    z-index: 10;
+}
+
+.animateuser{
+    animation: user 0.6s linear;
+}
+
+@keyframes user{
+    0%{
+bottom:0px;
+    }
+    50%{
+bottom:440px;
+    }
+    100%{
+bottom:0px;
+
+    }
+}
+#scoreCount{
+    position:absolute;
+    right:23px;
+    top:31px;
+    color:white;
+    width:100px;
+
+}
+.gameOver{
+    visibility:hidden;
+    position:relative;
+    top:10px;
+    text-align:center;
+    font-size:270px;
+    font-family: sans-serif;
+
+}
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .banner,.dragon ,.gameOver ,.obstacle, .user  {
+      width: 100%;
+    }
+}
+.banner {
+    position: absolute;
+    bottom: 60%;
+    left: 10%;
+    width: 8em;
+    height: 6em;
+    border-radius: .5em;
+    background-color: #772f1a;
+    background: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+    display: flex;
+    align-items: center;
+    transform: rotate(-10deg);
+}
+
+.banner::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: .5em;
+    height: 4.5em;
+    background-color: #772f1a;
+    background: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+}
+
+.banner > img {
+    width: 100%;
+}
+
+@keyframes obstacleAni{
+    0%{
+left:100vw;
+    }
+    100%{
+left:-10vw;
+    }
+}
+.obstacleAni{
+    animation:obstacleAni 5s linear infinite;
+}
+@keyframes dragon{
+    0%{
+left:100vw;
+    }
+    100%{
+left:-10vw;
+    }
+}
+.dragon{
+    animation:dragon 8s linear infinite;
+}
